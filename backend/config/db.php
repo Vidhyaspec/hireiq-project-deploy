@@ -3,7 +3,7 @@
 $conn = new mysqli(
     "mysql-23bc45de-vidhyasri0615-61cc.d.aivencloud.com",
     "avnadmin",
-    "AVNS_qeB229kUaQ2-4PQCJeQ",
+    "PASSWORD_FROM_RENDER_ENV",
     "defaultdb",
     26779
 );
