@@ -1,19 +1,19 @@
 <?php
 
+require __DIR__ . "/../../vendor/autoload.php";
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . "/../../");
+$dotenv->load();
+
 $conn = new mysqli(
-    "mysql-23bc45de-vidhyasri0615-61cc.d.aivencloud.com",
-    "avnadmin",
-    "PASSWORD_FROM_RENDER_ENV",
-    "defaultdb",
-    26779
+  $_ENV["DB_HOST"],
+  $_ENV["DB_USER"],
+  $_ENV["DB_PASS"],
+  $_ENV["DB_NAME"],
+  $_ENV["DB_PORT"]
 );
 
 if ($conn->connect_error) {
-    echo json_encode([
-        "status" => "error",
-        "message" => "DB connection failed"
-    ]);
-    exit();
+  die("DB Connection failed: " . $conn->connect_error);
 }
-
 ?>
