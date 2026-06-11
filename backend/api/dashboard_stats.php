@@ -44,22 +44,7 @@ mysqli_num_rows(
     )
 
 );
-
-$avgQuery =
-mysqli_query(
-
-    $conn,
-
-    "SELECT AVG(score) as avg_score
-     FROM applications"
-
-);
-
-$avgData =
-mysqli_fetch_assoc($avgQuery);
-
-$avgScore =
-round($avgData['avg_score']);
+ $avgScore = 0;
 
 echo json_encode([
 
